@@ -7,6 +7,26 @@ If you still don't understand what `bean`, please see container part firstly.
 `bean` was producted by factory. So we can take it as a abstract production.
 In application, it was superclass of many object, such as : service layer objects, data access layer objects, Hibernate SessionFactory objects, JMS Queue objects and so on.
 
+### bean initialization
+> for Spring IOC container, bean definition described the exact methods and propoties of bean objects. When needed, container get a certain definition of bean, and configurate it by java reflection in order to create a real object.
+
+```java
+// This example is about using java reflection to create objects
+package com.lzc;
+class person {
+    private String name;
+    private int age;
+}
+class Test {
+    public static void createobj() throws Exception {
+        Class classtype = Class.forName('com.lzc.person');
+        Object obj = classType.newInstance();
+        System.out.println("yes:no?" + (obj instanceof person))
+    }
+}
+
+```
+
 ## container
 what is container?
 > org.springframework.beans.factory.BeanFactory是Spring IoC容器的实际代表者，IoC容器负责容纳此前所描述的bean，并对bean进行管理。
@@ -32,6 +52,8 @@ pulic class Employee{
 ```
 
 ### DI(dependency injection)
+> 相对于由bean自己来控制其实例化、直接在构造器中指定依赖关系或则类似服务定位器（Service Locator）模式这3种自主控制依赖关系注入的方法来说，控制从根本上发生了倒转，这也正是控制反转（Inversion of Control， IoC） 名字的由来。
+
 1. Setter injection
 ```java
 public class Company {
