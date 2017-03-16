@@ -39,7 +39,8 @@
 
 * `@Autowired`
 
-    >
+    > ## `@Autowired` annotation on setter method
+    > By using `@Autowired`, you can get rid of <property> element in XML configuration file. It tries to perform **byType** autowiring on the method.
 
 * `@Override`(java prefined)
 
