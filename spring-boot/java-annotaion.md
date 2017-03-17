@@ -40,7 +40,11 @@
 * `@Autowired`
 
     > ## `@Autowired` annotation on setter method
-    > By using `@Autowired`, you can get rid of <property> element in XML configuration file. It tries to perform **byType** autowiring on the method.
+    > By using `@Autowired`, you can get rid of <property> elements in XML configuration file. It tries to perform **byType** autowiring on the method.
+    > ## `@Autowired` annotation on properties
+    > By using `@Autowired`, you can get rid of the setter methods
+    > ## `@Autowored` annotation on constrcutors
+    > By using `@Autowired`, you can get rid of <constructor-arg> elements in XML configuration file.
 
 * `@Override`(java prefined)
 
